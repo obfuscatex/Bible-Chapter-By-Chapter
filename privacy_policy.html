@@ -4,78 +4,437 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Bible - Chapter By Chapter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        :root {
+            --primary-glow: #00ffff;
+            --secondary-glow: #ff00ff;
+            --tertiary-glow: #ffff00;
+            --bg-dark: #0a0a0f;
+            --bg-card: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0ff;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Rajdhani', sans-serif;
+            line-height: 1.8;
+            color: var(--text-primary);
+            background: var(--bg-dark);
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+            position: relative;
         }
+
+        /* Animated background with 3D grid */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(0deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent),
+                linear-gradient(90deg, transparent 24%, rgba(0, 255, 255, 0.05) 25%, rgba(0, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 255, 255, 0.05) 75%, rgba(0, 255, 255, 0.05) 76%, transparent 77%, transparent);
+            background-size: 50px 50px;
+            animation: gridScroll 20s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes gridScroll {
+            0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+            100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+        }
+
+        /* Floating particles */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, var(--primary-glow), transparent),
+                radial-gradient(2px 2px at 60% 70%, var(--secondary-glow), transparent),
+                radial-gradient(1px 1px at 50% 50%, var(--tertiary-glow), transparent),
+                radial-gradient(1px 1px at 80% 10%, var(--primary-glow), transparent),
+                radial-gradient(2px 2px at 90% 60%, var(--secondary-glow), transparent);
+            background-size: 200% 200%;
+            animation: particleFloat 15s ease-in-out infinite;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(10px, -10px); }
+            50% { transform: translate(-5px, 5px); }
+            75% { transform: translate(5px, -5px); }
+        }
+
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(10, 10, 15, 0.98));
+            border-radius: 20px;
+            padding: 60px 50px;
+            box-shadow: 
+                0 0 60px rgba(0, 255, 255, 0.3),
+                0 0 120px rgba(255, 0, 255, 0.2),
+                inset 0 0 80px rgba(0, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            position: relative;
+            z-index: 1;
+            animation: containerEntry 1s ease-out;
         }
-        h1 {
-            color: #1a1a2e;
-            margin-bottom: 10px;
-            font-size: 2rem;
+
+        @keyframes containerEntry {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        /* Holographic corner accents */
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--primary-glow);
+            opacity: 0.5;
+            animation: cornerPulse 3s ease-in-out infinite;
+        }
+
+        .container::before {
+            top: -2px;
+            left: -2px;
+            border-width: 2px 0 0 2px;
+            box-shadow: -5px -5px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        .container::after {
+            bottom: -2px;
+            right: -2px;
+            border-width: 0 2px 2px 0;
+            box-shadow: 5px 5px 20px rgba(255, 0, 255, 0.5);
+        }
+
+        @keyframes cornerPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
         .app-name {
-            color: #667eea;
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-        .last-updated {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        h2 {
-            color: #1a1a2e;
-            margin-top: 30px;
+            color: var(--primary-glow);
+            font-size: 1.1rem;
             margin-bottom: 15px;
-            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: textGlow 2s ease-in-out infinite;
         }
-        p, li {
-            margin-bottom: 12px;
-            color: #444;
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow); }
+            50% { text-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--primary-glow), 0 0 60px var(--primary-glow); }
         }
-        ul {
-            padding-left: 25px;
+
+        .app-name::before {
+            content: '📖';
+            font-size: 1.5rem;
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow), var(--tertiary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            animation: titleShimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes titleShimmer {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 10px rgba(0, 255, 255, 0.5)); }
+            50% { filter: brightness(1.3) drop-shadow(0 0 30px rgba(0, 255, 255, 0.8)); }
+        }
+
+        .last-updated {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .last-updated::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-glow), transparent);
+            animation: scanLine 2s linear infinite;
+        }
+
+        @keyframes scanLine {
+            0% { left: 0; }
+            100% { left: calc(100% - 100px); }
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-glow);
+            margin-top: 40px;
             margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            padding-left: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
+
+        h2::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-glow);
+            animation: chevronPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes chevronPulse {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(5px); opacity: 0.6; }
+        }
+
+        h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: var(--secondary-glow);
+            letter-spacing: 1px;
+            text-shadow: 0 0 8px rgba(255, 0, 255, 0.4);
+        }
+
+        p, li {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        ul {
+            padding-left: 30px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            position: relative;
+            padding-left: 10px;
+        }
+
+        li::marker {
+            color: var(--primary-glow);
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 700;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+        }
+
         .highlight {
-            background: #f0f4ff;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            margin: 20px 0;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 255, 0.2),
+                inset 0 0 30px rgba(0, 255, 255, 0.05);
         }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(0, 255, 255, 0.1),
+                transparent
+            );
+            animation: highlightSweep 3s linear infinite;
+        }
+
+        @keyframes highlightSweep {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(360deg); }
+        }
+
+        .highlight strong {
+            position: relative;
+            z-index: 1;
+        }
+
         .contact {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.05), rgba(255, 0, 255, 0.05));
+            padding: 35px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid rgba(255, 0, 255, 0.3);
+            position: relative;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 255, 0.2),
+                inset 0 0 30px rgba(255, 0, 255, 0.05);
         }
+
+        .contact h2 {
+            margin-top: 0;
+            color: var(--secondary-glow);
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--secondary-glow), transparent);
+            animation: borderGlow 2s linear infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
         a {
-            color: #667eea;
+            color: var(--primary-glow);
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
         }
-        @media (max-width: 600px) {
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-glow);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px var(--primary-glow);
+        }
+
+        a:hover {
+            color: var(--secondary-glow);
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+        }
+
+        a:hover::after {
+            width: 100%;
+            background: var(--secondary-glow);
+        }
+
+        /* Holographic data sections */
+        .data-section {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.03), rgba(255, 0, 255, 0.03));
+            border-left: 3px solid var(--primary-glow);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+            box-shadow: -5px 0 15px rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .data-section:hover {
+            transform: translateX(5px);
+            box-shadow: -10px 0 25px rgba(0, 255, 255, 0.2);
+            border-left-color: var(--secondary-glow);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow), var(--tertiary-glow));
+            box-shadow: 0 0 10px var(--primary-glow);
+            z-index: 1000;
+            transform-origin: left;
+        }
+
+        @media (max-width: 768px) {
             .container {
-                padding: 25px;
+                padding: 40px 30px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .app-name {
+                font-size: 0.9rem;
+                letter-spacing: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
             }
             h1 {
                 font-size: 1.5rem;
@@ -84,75 +443,139 @@
     </style>
 </head>
 <body>
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
     <div class="container">
-        <p class="app-name">📖 Bible - Chapter By Chapter</p>
+        <p class="app-name">Bible - Chapter By Chapter</p>
         <h1>Privacy Policy</h1>
         <p class="last-updated">Last Updated: February 4, 2026</p>
 
         <div class="highlight">
-            <strong>Summary:</strong> We respect your privacy. Your reading progress is stored only on your device. We use Google AdMob to display ads, which may collect anonymous advertising data.
+            <strong>SUMMARY:</strong> We respect your privacy. Your reading progress is stored only on your device. We use Google AdMob to display ads, which may collect anonymous advertising data.
         </div>
 
         <h2>1. Introduction</h2>
-        <p>Welcome to Bible - Chapter By Chapter ("we," "our," or "us"). This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+        <div class="data-section">
+            <p>Welcome to Bible - Chapter By Chapter ("we," "our," or "us"). This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+        </div>
 
         <h2>2. Information We Collect</h2>
         
-        <h3 style="font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px;">2.1 Information Stored Locally</h3>
-        <p>The following data is stored <strong>only on your device</strong> and is never transmitted to us:</p>
-        <ul>
-            <li>Reading progress (chapters completed)</li>
-            <li>Quiz scores and history</li>
-            <li>Notification preferences and reminder settings</li>
-            <li>Reading streaks</li>
-        </ul>
+        <h3>2.1 Information Stored Locally</h3>
+        <div class="data-section">
+            <p>The following data is stored <strong>only on your device</strong> and is never transmitted to us:</p>
+            <ul>
+                <li>Reading progress (chapters completed)</li>
+                <li>Quiz scores and history</li>
+                <li>Notification preferences and reminder settings</li>
+                <li>Reading streaks</li>
+            </ul>
+        </div>
 
-        <h3 style="font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px;">2.2 Information Collected by Third Parties</h3>
-        <p>We use <strong>Google AdMob</strong> to display advertisements. Google may collect:</p>
-        <ul>
-            <li>Device advertising identifiers</li>
-            <li>IP address (anonymized)</li>
-            <li>General location (country/region level)</li>
-            <li>App usage statistics</li>
-            <li>Device information (model, OS version)</li>
-        </ul>
-        <p>For more information, please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+        <h3>2.2 Information Collected by Third Parties</h3>
+        <div class="data-section">
+            <p>We use <strong>Google AdMob</strong> to display advertisements. Google may collect:</p>
+            <ul>
+                <li>Device advertising identifiers</li>
+                <li>IP address (anonymized)</li>
+                <li>General location (country/region level)</li>
+                <li>App usage statistics</li>
+                <li>Device information (model, OS version)</li>
+            </ul>
+            <p>For more information, please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+        </div>
 
         <h2>3. How We Use Information</h2>
-        <ul>
-            <li><strong>Local Data:</strong> To save your progress and provide a personalized reading experience</li>
-            <li><strong>Advertising Data:</strong> To display relevant advertisements and support the free app</li>
-        </ul>
+        <div class="data-section">
+            <ul>
+                <li><strong>Local Data:</strong> To save your progress and provide a personalized reading experience</li>
+                <li><strong>Advertising Data:</strong> To display relevant advertisements and support the free app</li>
+            </ul>
+        </div>
 
         <h2>4. Data Sharing</h2>
-        <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties, except:</p>
-        <ul>
-            <li>Google AdMob (for advertising purposes, as described above)</li>
-            <li>When required by law or legal process</li>
-        </ul>
+        <div class="data-section">
+            <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties, except:</p>
+            <ul>
+                <li>Google AdMob (for advertising purposes, as described above)</li>
+                <li>When required by law or legal process</li>
+            </ul>
+        </div>
 
         <h2>5. Data Security</h2>
-        <p>Your reading progress and preferences are stored securely on your device using Android's DataStore. We do not have access to this data.</p>
+        <div class="data-section">
+            <p>Your reading progress and preferences are stored securely on your device using Android's DataStore. We do not have access to this data.</p>
+        </div>
 
         <h2>6. Children's Privacy</h2>
-        <p>Our app is suitable for all ages. We do not knowingly collect personal information from children under 13. The app displays only non-personalized ads for users who have not consented to personalized advertising.</p>
+        <div class="data-section">
+            <p>Our app is suitable for all ages. We do not knowingly collect personal information from children under 13. The app displays only non-personalized ads for users who have not consented to personalized advertising.</p>
+        </div>
 
         <h2>7. Your Rights</h2>
-        <p>You have the right to:</p>
-        <ul>
-            <li><strong>Delete your data:</strong> Clear app data from your device settings or uninstall the app</li>
-            <li><strong>Opt out of personalized ads:</strong> Use your device's ad settings to limit ad tracking</li>
-            <li><strong>Disable notifications:</strong> Turn off reminders in the app's Settings screen</li>
-        </ul>
+        <div class="data-section">
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Delete your data:</strong> Clear app data from your device settings or uninstall the app</li>
+                <li><strong>Opt out of personalized ads:</strong> Use your device's ad settings to limit ad tracking</li>
+                <li><strong>Disable notifications:</strong> Turn off reminders in the app's Settings screen</li>
+            </ul>
+        </div>
 
         <h2>8. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last Updated" date at the top of this page.</p>
+        <div class="data-section">
+            <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last Updated" date at the top of this page.</p>
+        </div>
 
         <div class="contact">
-            <h2 style="margin-top: 0;">9. Contact Us</h2>
+            <h2>9. Contact Us</h2>
             <p>If you have any questions about this Privacy Policy or our practices, please contact us at:</p>
-            <p><strong>Email:</strong> obfuscatexapps@gmail.com</p>
+            <p><strong>Email:</strong> <a href="mailto:obfuscatexapps@gmail.com">obfuscatexapps@gmail.com</a></p>
         </div>
     </div>
+
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('scrollIndicator').style.width = scrolled + '%';
+        });
+
+
+
+        // Add entrance animation to sections on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.data-section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
+        });
+    </script>
+
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </body>
 </html>
