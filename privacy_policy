@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Bible - Chapter By Chapter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        .app-name {
+            color: #667eea;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        .last-updated {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        h2 {
+            color: #1a1a2e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        p, li {
+            margin-bottom: 12px;
+            color: #444;
+        }
+        ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin: 20px 0;
+        }
+        .contact {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        a {
+            color: #667eea;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="app-name">📖 Bible - Chapter By Chapter</p>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: February 4, 2026</p>
+
+        <div class="highlight">
+            <strong>Summary:</strong> We respect your privacy. Your reading progress is stored only on your device. We use Google AdMob to display ads, which may collect anonymous advertising data.
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Welcome to Bible - Chapter By Chapter ("we," "our," or "us"). This Privacy Policy explains how we collect, use, and protect your information when you use our mobile application.</p>
+
+        <h2>2. Information We Collect</h2>
+        
+        <h3 style="font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px;">2.1 Information Stored Locally</h3>
+        <p>The following data is stored <strong>only on your device</strong> and is never transmitted to us:</p>
+        <ul>
+            <li>Reading progress (chapters completed)</li>
+            <li>Quiz scores and history</li>
+            <li>Notification preferences and reminder settings</li>
+            <li>Reading streaks</li>
+        </ul>
+
+        <h3 style="font-size: 1.1rem; margin-top: 20px; margin-bottom: 10px;">2.2 Information Collected by Third Parties</h3>
+        <p>We use <strong>Google AdMob</strong> to display advertisements. Google may collect:</p>
+        <ul>
+            <li>Device advertising identifiers</li>
+            <li>IP address (anonymized)</li>
+            <li>General location (country/region level)</li>
+            <li>App usage statistics</li>
+            <li>Device information (model, OS version)</li>
+        </ul>
+        <p>For more information, please review <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+
+        <h2>3. How We Use Information</h2>
+        <ul>
+            <li><strong>Local Data:</strong> To save your progress and provide a personalized reading experience</li>
+            <li><strong>Advertising Data:</strong> To display relevant advertisements and support the free app</li>
+        </ul>
+
+        <h2>4. Data Sharing</h2>
+        <p>We do <strong>not</strong> sell, trade, or share your personal information with third parties, except:</p>
+        <ul>
+            <li>Google AdMob (for advertising purposes, as described above)</li>
+            <li>When required by law or legal process</li>
+        </ul>
+
+        <h2>5. Data Security</h2>
+        <p>Your reading progress and preferences are stored securely on your device using Android's DataStore. We do not have access to this data.</p>
+
+        <h2>6. Children's Privacy</h2>
+        <p>Our app is suitable for all ages. We do not knowingly collect personal information from children under 13. The app displays only non-personalized ads for users who have not consented to personalized advertising.</p>
+
+        <h2>7. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+            <li><strong>Delete your data:</strong> Clear app data from your device settings or uninstall the app</li>
+            <li><strong>Opt out of personalized ads:</strong> Use your device's ad settings to limit ad tracking</li>
+            <li><strong>Disable notifications:</strong> Turn off reminders in the app's Settings screen</li>
+        </ul>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of any significant changes by updating the "Last Updated" date at the top of this page.</p>
+
+        <div class="contact">
+            <h2 style="margin-top: 0;">9. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or our practices, please contact us at:</p>
+            <p><strong>Email:</strong> [YOUR_EMAIL_ADDRESS]</p>
+        </div>
+    </div>
+</body>
+</html>
